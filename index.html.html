@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORESET — Future Scenario & Visual Storytelling</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: #111;
+  font-family: 'DM Sans', sans-serif;
+  color: #fff;
+}
+
+/* ===================== SHARED ===================== */
+.page {
+  width: 1456px;
+  margin: 0 auto 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gap { height: 60px; }
+
+/* ===================== PAGE 1: PERSONA ===================== */
+.persona-page {
+  background: #0d0d0d;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 820px;
+}
+
+.persona-left {
+  background: linear-gradient(160deg, #1a0828 0%, #2a0a3e 60%, #0d0d0d 100%);
+  padding: 72px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  position: relative;
+}
+
+.persona-left::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 10%; bottom: 10%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(255,60,158,0.4), transparent);
+}
+
+.section-eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ff3c9e;
+  font-family: 'Space Mono', monospace;
+}
+
+.persona-page h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 68px;
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -2px;
+}
+
+.persona-page h1 .accent {
+  font-style: italic;
+  background: linear-gradient(90deg, #ff3c9e, #ff9a3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.persona-intro {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  max-width: 380px;
+}
+
+.persona-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ptag {
+  background: rgba(255,60,158,0.1);
+  border: 1px solid rgba(255,60,158,0.3);
+  color: #ffb3d4;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: 'Space Mono', monospace;
+}
+
+.persona-right {
+  padding: 72px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+}
+
+.persona-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+
+.persona-card-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 10px;
+}
+
+.persona-card p {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.78);
+}
+
+.persona-card p strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+.persona-card .question {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #ffb3d4;
+  margin-top: 10px;
+}
+
+/* ===================== PAGE 2: BEST CASES ===================== */
+.best-page {
+  background: #f9f5ef;
+  color: #1a1a1a;
+  padding: 72px 72px 64px;
+  min-height: 820px;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.page-title .sub { color: #b9855d; }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 22px;
+  margin-bottom: 40px;
+}
+
+.page-header-right {
+  font-size: 12px;
+  color: #888;
+  font-family: 'Space Mono', monospace;
+  text-align: right;
+  line-height: 1.6;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.scenario-block {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.scenario-block-header {
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.best-header { background: #2d5a27; color: white; }
+.worst-header { background: #7a1f1f; color: white; }
+
+.scenario-block-header .icon {
+  font-size: 26px;
+}
+
+.scenario-block-header .label {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.scenario-block-header .title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.scenario-block-body {
+  background: white;
+  padding: 28px 28px 24px;
+  border: 1px solid #e8e0d6;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+}
+
+.scenario-block-body p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.today-box {
+  background: #f5f0e8;
+  border-left: 3px solid #b9855d;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 4px;
+}
+
+.today-box .today-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #b9855d;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 5px;
+}
+
+.today-box p {
+  font-size: 12.5px;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===================== PAGE 3: WHAT IF ===================== */
+.worst-page {
+  background: #111218;
+  color: #fff;
+  padding: 72px 72px 64px;
+  min-height: 820px;
+}
+
+.worst-page .page-title { color: #fff; }
+.worst-page .page-title .sub { color: #ff6b6b; }
+.worst-page .page-header { border-color: rgba(255,255,255,0.15); }
+.worst-page .page-header-right { color: #666; }
+
+.worst-block {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.worst-block-header {
+  padding: 20px 28px;
+  background: rgba(255,50,50,0.12);
+  border: 1px solid rgba(255,80,80,0.25);
+  border-bottom: none;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.worst-block-body {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  padding: 28px 28px 24px;
+}
+
+.worst-block-body p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 14px;
+}
+
+.today-box-dark {
+  background: rgba(255,107,107,0.08);
+  border-left: 3px solid rgba(255,107,107,0.5);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 4px;
+}
+
+.today-box-dark .today-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ff9090;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 5px;
+}
+
+.today-box-dark p {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ===================== PAGE 4: FINAL SCENARIO ===================== */
+.final-page {
+  background: linear-gradient(160deg, #fff8f5 0%, #f5f0ff 100%);
+  color: #1a1a1a;
+  padding: 72px 72px 64px;
+  min-height: 820px;
+}
+
+.final-page .page-title .sub { color: #8b5cf6; }
+.final-page .page-header { border-color: #1a1a1a; }
+
+.final-intro {
+  background: #1a1a1a;
+  color: white;
+  border-radius: 14px;
+  padding: 28px 36px;
+  margin-bottom: 32px;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.final-intro strong { color: #ffb3d4; }
+
+.final-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.choice-box {
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.choice-a {
+  background: rgba(143,188,139,0.12);
+  border: 1px solid rgba(143,188,139,0.35);
+}
+
+.choice-b {
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.3);
+}
+
+.choice-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 10px;
+}
+
+.choice-a .choice-label { color: #4a9e6b; }
+.choice-b .choice-label { color: #8b5cf6; }
+
+.choice-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.choice-box p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.final-conclusion {
+  background: white;
+  border-radius: 14px;
+  padding: 28px 36px;
+  border: 1px solid #e8e0d6;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: #333;
+}
+
+.final-conclusion strong { color: #1a1a1a; }
+
+/* ===================== PAGE 5: BRAND ===================== */
+.brand-page {
+  background: #f9f5ef;
+  color: #1a1a1a;
+  min-height: 820px;
+  display: grid;
+  grid-template-columns: 440px 1fr;
+}
+
+.brand-left {
+  background: #1a1a1a;
+  padding: 64px 44px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.brand-eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ff3c9e;
+  font-family: 'Space Mono', monospace;
+}
+
+.brand-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 54px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 0.95;
+}
+
+.brand-about {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+}
+
+.logo-comparison {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.logo-comparison .lc-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 14px;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.logo-old-pill {
+  background: #0065b3;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.logo-arrow { color: rgba(255,255,255,0.3); font-size: 18px; }
+
+.logo-new-pill {
+  background: linear-gradient(135deg, #4a9e6b, #6dbb8a);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.logo-note {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.brand-impact-title {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 12px;
+}
+
+.brand-impact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brand-impact-list li {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  padding-left: 16px;
+  position: relative;
+}
+
+.brand-impact-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #4a9e6b;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.brand-right {
+  padding: 64px 56px;
+}
+
+.brand-right-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #999;
+  font-family: 'Space Mono', monospace;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 16px;
+  margin-bottom: 28px;
+}
+
+/* ===================== NS ADVERTISEMENT ===================== */
+.ns-ad {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5ddd4;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.09);
+  min-height: 580px;
+}
+
+.ns-ad-content {
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ns-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.ns-badge {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #4a9e6b, #6dbb8a);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 16px; color: white;
+  letter-spacing: -1px;
+  font-family: 'Space Mono', monospace;
+}
+
+.ns-brand-text strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.ns-brand-text span {
+  font-size: 10px;
+  color: #4a9e6b;
+  letter-spacing: 2px;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+}
+
+.ns-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.0;
+  color: #1a1a1a;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+}
+
+.ns-headline em { color: #4a9e6b; font-style: italic; }
+
+.ns-subline {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 28px;
+  max-width: 360px;
+}
+
+.ns-features {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 32px;
+}
+
+.ns-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.55;
+}
+
+.ns-feature-dot {
+  width: 7px; height: 7px;
+  background: #4a9e6b;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.ns-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ns-cta {
+  background: #1a1a1a;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ns-cta-note {
+  font-size: 11px;
+  color: #999;
+  line-height: 1.5;
+}
+
+/* AD VISUAL PANEL */
+.ns-ad-visual {
+  background: linear-gradient(180deg, #c5e8c5 0%, #8fbc8b 50%, #5a9e5a 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 24px;
+  overflow: hidden;
+}
+
+.ad-scene {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.sky { position: absolute; top:0; left:0; right:0; height: 45%; background: linear-gradient(180deg, #87ceeb, #b0d8ef); }
+.hills { position: absolute; bottom: 0; left: 0; right: 0; height: 65%; background: linear-gradient(180deg, #6ab06a, #4a8a4a); border-radius: 60% 40% 0 0 / 30% 30% 0 0; }
+.hills2 { position: absolute; bottom: 0; right: -30px; width: 55%; height: 50%; background: #5aa05a; border-radius: 60% 40% 0 0 / 40% 40% 0 0; }
+.sun { position: absolute; top: 24px; right: 36px; width: 42px; height: 42px; background: #ffe566; border-radius: 50%; box-shadow: 0 0 24px #ffe56699; }
+.cloud { position: absolute; background: rgba(255,255,255,0.7); border-radius: 40px; }
+.c1 { width: 60px; height: 22px; top: 40px; left: 20px; }
+.c2 { width: 40px; height: 16px; top: 30px; left: 50px; }
+.c3 { width: 50px; height: 18px; top: 55px; left: 70px; }
+
+.tree { position: absolute; bottom: 0; display: flex; flex-direction: column; align-items: center; }
+.tree-trunk { width: 8px; background: #5d3a1a; }
+.tree-top { background: #2d5a27; border-radius: 50% 50% 40% 40%; }
+
+.t1 .tree-trunk { height: 20px; }
+.t1 .tree-top { width: 32px; height: 44px; margin-bottom: -4px; }
+.t1 { left: 14%; bottom: 30px; }
+
+.t2 .tree-trunk { height: 14px; }
+.t2 .tree-top { width: 24px; height: 34px; margin-bottom: -2px; }
+.t2 { left: 24%; bottom: 20px; }
+
+.t3 .tree-trunk { height: 26px; }
+.t3 .tree-top { width: 38px; height: 52px; margin-bottom: -5px; }
+.t3 { right: 10%; bottom: 28px; }
+
+.train-window-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.window-frame {
+  width: 160px; height: 200px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 16px 16px 4px 4px;
+  border: 6px solid #7a5c3a;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.1), 0 4px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.window-inner {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #87ceeb 0%, #b0d8ef 40%, #8fbc8b 65%, #5a8a5a 100%);
+}
+
+.person-in-window {
+  position: absolute;
+  bottom: 0;
+  left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.pw-head { width: 18px; height: 18px; background: #5d3a1a; border-radius: 50%; margin-bottom: -2px; }
+.pw-body { width: 32px; height: 40px; background: #5d3a1a; border-radius: 6px 6px 0 0; }
+
+.seat-bar {
+  width: 172px; height: 20px;
+  background: #7a5c3a;
+  border-radius: 0 0 4px 4px;
+}
+
+.ad-visual-tags {
+  position: absolute;
+  top: 16px; left: 10px;
+  display: flex; flex-direction: column; gap: 6px;
+  z-index: 10;
+}
+
+.vtag {
+  background: rgba(255,255,255,0.88);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  color: #2d5a27;
+  font-family: 'Space Mono', monospace;
+  white-space: nowrap;
+}
+
+.ad-tagline {
+  position: absolute;
+  bottom: 18px; left: 0; right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.ad-tagline p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #1a3a1a;
+  font-weight: 700;
+}
+
+.ad-tagline span {
+  font-size: 9px;
+  font-family: 'Space Mono', monospace;
+  color: #4a7a4a;
+  letter-spacing: 1.5px;
+  margin-top: 3px;
+  display: block;
+}
+
+/* ===================== PAGE 6: VISUAL STORYTELLING EXPLANATION ===================== */
+.vs-page {
+  background: #0d0d0d;
+  color: white;
+  padding: 72px 72px 64px;
+  min-height: 820px;
+}
+
+.vs-page .page-header { border-color: rgba(255,255,255,0.15); }
+.vs-page .page-title .sub { color: #ff3c9e; }
+.vs-page .page-header-right { color: #666; }
+
+.vs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.vs-left { display: flex; flex-direction: column; gap: 20px; }
+.vs-right { display: flex; flex-direction: column; gap: 20px; }
+
+.vs-text-block {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  padding: 26px 28px;
+}
+
+.vs-text-block .vs-block-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff3c9e;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 10px;
+}
+
+.vs-text-block p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.7);
+}
+
+.vs-text-block p strong { color: white; font-weight: 500; }
+
+.vs-reflection {
+  background: rgba(255,60,158,0.07);
+  border: 1px solid rgba(255,60,158,0.2);
+  border-radius: 14px;
+  padding: 26px 28px;
+}
+
+.vs-reflection .vs-block-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff3c9e;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 10px;
+}
+
+.vs-reflection p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.7);
+}
+
+.vs-reflection p strong { color: #ffb3d4; font-weight: 500; }
+
+.value-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.value-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+}
+
+.value-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #4a9e6b;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE 1: A POSSIBLE FUTURE / MEET MAYA ===== -->
+<div class="page persona-page">
+  <div class="persona-left">
+    <div class="section-eyebrow">Assignment 4 · A Possible Future</div>
+    <h1>Meet<br><span class="accent">Maya.</span></h1>
+    <p class="persona-intro">
+      Maya is 23 years old and just graduated from a Communication and Media programme. She grew up in a world of infinite scroll, AI-generated everything, and a culture that rewarded hustle over health. She is done. Maya represents the CORESET generation: people who are slowly, deliberately, choosing themselves over the system.
+    </p>
+    <p class="persona-intro" style="margin-top:-8px;">
+      She spends her weekends hiking without her phone, drinks matcha instead of energy drinks, and recently spent three days at a digital detox retreat in the Veluwe. She is not anti-technology. She is anti-overstimulation. She is the future consumer, and she is picky.
+    </p>
+    <div class="persona-tags">
+      <span class="ptag">Coreset</span>
+      <span class="ptag">23 yrs</span>
+      <span class="ptag">Arnhem</span>
+      <span class="ptag">Media graduate</span>
+      <span class="ptag">Anti-hustle</span>
+      <span class="ptag">Slow travel</span>
+    </div>
+  </div>
+
+  <div class="persona-right">
+    <div class="persona-card">
+      <div class="persona-card-label">Her daily life · 2035</div>
+      <p>Maya lives in a city that has started to redesign itself around rest. Her neighbourhood has a "Screen-Free Sunday" market where no phones are allowed and everything is analogue. She takes the train to work: not because it is faster, but because it is the only hour of her day she genuinely enjoys. She sits in the quiet carriage, looks out the window, and feels like herself again.</p>
+      <p>She applies only to companies with transparent values. She asked her last interviewer: "What is your policy on after-hours messages?" She got the job because they had a real answer. <strong>She will not compromise on peace.</strong></p>
+    </div>
+    <div class="persona-card">
+      <div class="persona-card-label">What Maya wants to know</div>
+      <p>How will the world look for Maya if the CORESET trend keeps growing? What happens to the brands she relies on, like NS, if this movement succeeds? And what if it fails, and convenience wins instead?</p>
+      <p class="question">What world will she wake up in?</p>
+    </div>
+  </div>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== PAGE 2: BEST CASE SCENARIOS ===== -->
+<div class="page best-page">
+  <div class="page-header">
+    <div>
+      <div class="section-eyebrow" style="color:#2d5a27; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:4px; text-transform:uppercase; margin-bottom:6px;">Assignment 4A</div>
+      <h2 class="page-title">Best case <span class="sub">scenarios.</span></h2>
+    </div>
+    <div class="page-header-right">
+      Alice Di Prospero & Valerie Kemunto<br>
+      CSA-C01 · Trend: CORESET
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="scenario-block">
+      <div class="scenario-block-header best-header">
+        <span class="icon">🌿</span>
+        <div>
+          <span class="label">Best Case 1</span>
+          <span class="title">Society Rebuilds Around Rest</span>
+        </div>
+      </div>
+      <div class="scenario-block-body">
+        <p>By 2035, CORESET has moved from a niche lifestyle to a societal norm. Governments, urban planners, and employers have all responded to a decade of burnout data by making structural changes: workweeks are capped at 32 hours across the EU, urban parks have replaced car parks in city centres, and schools teach "digital literacy" not as how to use apps, but as how to choose not to. The concept of being "always available" has become as socially unacceptable as smoking indoors once was.</p>
+        <p>Maya thrives in this world. She is not a radical; she is simply a person whose needs are now mainstream. She can find quiet carriages on every NS train, she books digital detox retreats at the same price as a normal city trip, and her employer gives her two "offline days" per month as standard. Burnout is no longer something people whisper about; it is something institutions are built to prevent.</p>
+        <p>The Coreset generation has made the world more honest. Brands that relied on addiction-by-design have had to rebuild. People are sleeping better. Spending is more intentional. Cafes are noisier but phones are quieter.</p>
+        <div class="today-box">
+          <div class="today-label">In today's world</div>
+          <p>Digital detox retreats exist but are expensive and rare. Quiet carriages on NS exist but are poorly enforced. The 32-hour workweek is a political discussion, not yet a reality. Maya would want all of this but have to fight for it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scenario-block">
+      <div class="scenario-block-header best-header">
+        <span class="icon">🚆</span>
+        <div>
+          <span class="label">Best Case 2</span>
+          <span class="title">Brands Compete on Calm</span>
+        </div>
+      </div>
+      <div class="scenario-block-body">
+        <p>In this version of 2035, the consumer market has reorganised itself around CORESET values. The most profitable brands are not the most stimulating, but the most restorative. NS has repositioned itself as the "mindful commute" brand, redesigning its trains with natural materials, banning advertising inside carriages, and offering a weekly "slow route" that takes a longer scenic path between cities for the same price as a direct connection.</p>
+        <p>Maya has genuine choice. She can compare brands on a "Coreset Score," a third-party rating similar to the energy label on appliances, but measuring how much a company's product or service supports rather than depletes her wellbeing. She chooses accordingly. Companies that score low lose young customers fast.</p>
+        <p>Brands like NS, who have invested early in this transition, are thriving. NS is not just a transport company but a wellness partner, a name people associate with the best part of their day. Their ad campaigns no longer show busy professionals arriving somewhere on time. They show people sitting still, looking out the window, breathing.</p>
+        <div class="today-box">
+          <div class="today-label">In today's world</div>
+          <p>NS trains carry advertising on every surface. The "quiet carriage" has no sound monitoring. There is no wellness rating for brands. Maya would appreciate what NS is, but wish it was more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== PAGE 3: WORST CASE ===== -->
+<div class="page worst-page">
+  <div class="page-header">
+    <div>
+      <div class="section-eyebrow" style="color:#ff6b6b; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:4px; text-transform:uppercase; margin-bottom:6px;">Assignment 4B</div>
+      <h2 class="page-title" style="color:white;">What if... <span class="sub">it goes wrong?</span></h2>
+    </div>
+    <div class="page-header-right">
+      Alice Di Prospero & Valerie Kemunto<br>
+      CSA-C01 · Trend: CORESET
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="worst-block">
+      <div class="worst-block-header">
+        <span class="icon" style="font-size:26px;">⚡</span>
+        <div>
+          <span class="label" style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:2px; opacity:0.6; display:block; color:white; margin-bottom:2px;">Worst Case 1</span>
+          <span style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:white;">Wellness Gets Sold Back to Us</span>
+        </div>
+      </div>
+      <div class="worst-block-body">
+        <p>Companies see the CORESET trend coming and move fast, but not with genuine change. They rebrand. Every product becomes "mindful," every app adds a "focus mode," every hotel has a "digital detox package" that still has WiFi in the bathroom. The aesthetics of slowness are mass-produced while the underlying logic stays the same: extract attention, sell more, grow quarterly.</p>
+        <p>Maya is exhausted in a different way now. She cannot tell what is real from what is performance. NS launches a "Rust Carriage" with wooden panels and no WiFi, but the journey is still crowded, the delays still unaddressed, and the design was made by an AI in three hours to capitalise on a trend. The authenticity is gone before it was ever there.</p>
+        <p>Wellness-washing becomes the new greenwashing. Brands that do it face backlash but recover quickly, because consumers have nowhere else to go. The CORESET movement exists but in a polluted marketplace where everything claims to be calm, and nothing is.</p>
+        <div class="today-box-dark">
+          <div class="today-label">In today's world</div>
+          <p>We already see this with "self-care" products sold by companies with poor labour practices, and meditation apps that send notifications every 20 minutes to remind you to meditate. This future is not far off at all.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="worst-block">
+      <div class="worst-block-header">
+        <span class="icon" style="font-size:26px;">📱</span>
+        <div>
+          <span class="label" style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:2px; opacity:0.6; display:block; color:white; margin-bottom:2px;">Worst Case 2</span>
+          <span style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:white;">Convenience Addiction Wins Instead</span>
+        </div>
+      </div>
+      <div class="worst-block-body">
+        <p>CORESET never goes mainstream. The pull of convenience is simply too strong. AI personal assistants, instant delivery, and algorithmically optimised everything make real slowness feel like poverty. Why sit on a slow train looking out the window when an AI has already summarised the view for you? Why be bored when boredom has been engineered out of existence?</p>
+        <p>Maya still feels the need to slow down, but she is increasingly alone in it. Her employer penalises her for not responding to messages during evenings. Her friends mock her for going to a retreat "like a grandma." Social status is now measured in output, speed, and AI-assisted productivity. Slow travel is a niche for people who cannot afford to be fast.</p>
+        <p>NS, in this world, is struggling. Young people fly if they can and use fully automated pods if they cannot. The train is seen as a relic. NS never made the pivot to becoming a "mindful travel" brand, and now the moment has passed. Their market share erodes alongside the attention spans of their former passengers.</p>
+        <div class="today-box-dark">
+          <div class="today-label">In today's world</div>
+          <p>Screen time keeps rising year over year despite widespread awareness of the harm. The average Dutch person checks their phone 150 times a day. This future is the path of least resistance if nothing changes structurally.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== PAGE 4: FINAL SCENARIO ===== -->
+<div class="page final-page">
+  <div class="page-header">
+    <div>
+      <div class="section-eyebrow" style="color:#8b5cf6; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:4px; text-transform:uppercase; margin-bottom:6px;">Assignment 4D · Final Scenarios</div>
+      <h2 class="page-title">Maya's <span class="sub">difficult choice.</span></h2>
+    </div>
+    <div class="page-header-right" style="color:#888;">
+      Alice Di Prospero & Valerie Kemunto<br>
+      CSA-C01 · Trend: CORESET
+    </div>
+  </div>
+
+  <div class="final-intro">
+    Maya is 23, graduated, and ready to start her career. She has been offered two paths. Both align with her values. But they ask very different things of her. The CORESET trend is strong enough that she has real options, but not so universal that every company plays fair. Before she decides, she has to think carefully about what she believes and how much she is willing to risk for it.
+  </div>
+
+  <div class="final-choices">
+    <div class="choice-box choice-a">
+      <div class="choice-label">Option A · The Established Organisation</div>
+      <h3>Join NS as a Communications Strategist</h3>
+      <p>NS is making a genuine pivot. They have hired a "Head of Slowness," redesigned two train lines as Coreset experience routes, and publicly committed to removing all advertising from their quiet carriages by 2027. Maya has been headhunted because they want someone who genuinely lives the values they are trying to communicate. She would have stability, a salary, and a real platform. But NS is large. Change inside a 30,000-person organisation is slow. Will she still be able to see the impact of her work?</p>
+      <p style="margin-top:12px; font-style:italic; color:#2d5a27;">If Maya lived in today's world, NS would not yet be making this pivot. She would be joining a conventional transport brand with a quiet carriage that is mostly ignored.</p>
+    </div>
+    <div class="choice-box choice-b">
+      <div class="choice-label">Option B · The Start-Up</div>
+      <h3>Co-found a "Slow Travel" Platform with friends</h3>
+      <p>Her two closest friends from university want to build a platform that curates phone-free train journeys across Europe, complete with offline reading packages, nature route detours, and community meetups at the final destination. No screens, no algorithms, no ads. Just people choosing to be present together. Maya would be a co-founder. The risk is real: most start-ups fail. But if it works, she will have built something that embodies the trend rather than just communicating it for someone else. She would see every outcome directly.</p>
+      <p style="margin-top:12px; font-style:italic; color:#6b4fbb;">In today's world, this start-up would be extremely hard to fund. Investors still expect growth-at-all-costs. A business built on intentional friction is not an easy pitch.</p>
+    </div>
+  </div>
+
+  <div class="final-conclusion">
+    Maya has a lot to sit with, literally. She will decide on a long train journey, phone in her bag, watching the Netherlands pass by outside the window. Both options are real because the CORESET trend has given people like her actual choices, not just aspirations. What she knows for certain is this: <strong>she will not work for a brand that performs rest while selling restlessness.</strong> Whatever she chooses, it has to be true.
+  </div>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== PAGE 5: FUTURE-READY BRAND ===== -->
+<div class="page brand-page">
+  <div class="brand-left">
+    <div>
+      <div class="brand-eyebrow">Assignment 5 · Future-Ready Brand</div>
+      <h2>NS</h2>
+      <p class="brand-about">Nederlandse Spoorwegen is the most-used transport brand in the Netherlands, carrying over one million passengers every day. It already lives inside the CORESET trend's natural territory: slow travel, landscape connection, enforced presence. The question is whether NS will lead this moment or miss it.</p>
+    </div>
+
+    <div class="logo-comparison">
+      <div class="lc-label">Proposed Brand Shift</div>
+      <div class="logo-row">
+        <span class="logo-old-pill">NS</span>
+        <span class="logo-arrow">→</span>
+        <span class="logo-new-pill">NS Rust</span>
+      </div>
+      <p class="logo-note">The iconic NS blue represents speed and utility. A new sage-green identity introduces <em>Rust</em> (Dutch: rest, quiet) as a product line. Blue stays for the functional service. Green marks the intentional experience. It is not a rebrand. It is an extension, and a promise.</p>
+    </div>
+
+    <div>
+      <div class="brand-impact-title">How CORESET impacts NS across scenarios</div>
+      <ul class="brand-impact-list">
+        <li>Best case: NS becomes the defining brand of mindful travel in Europe. Young consumers choose the train not for speed but for peace.</li>
+        <li>Best case: The NS Rust Carriage becomes a premium product with genuine demand, allowing NS to increase fares without resistance.</li>
+        <li>Worst case 1: NS risks wellness-washing accusations if it redesigns aesthetics without addressing delays, overcrowding, and pricing.</li>
+        <li>Worst case 2: If convenience addiction wins, NS loses its youngest customer base to faster, fully automated alternatives and never recovers.</li>
+        <li>Either way: NS needs to act now. The window for an authentic pivot is open. It will not stay open forever.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="brand-right">
+    <div class="brand-right-label">Assignment 6 · Visual Storytelling · Future NS Advertisement · Best Case Scenario 2 · 2035</div>
+
+    <div class="ns-ad">
+      <div class="ns-ad-content">
+        <div>
+          <div class="ns-brand-row">
+            <div class="ns-badge">NS</div>
+            <div class="ns-brand-text">
+              <strong>NS Rust</strong>
+              <span>Slow Travel · Est. 2027</span>
+            </div>
+          </div>
+
+          <h2 class="ns-headline">
+            Stop<br><em>arriving.</em><br>
+            Start<br>travelling.
+          </h2>
+
+          <p class="ns-subline">In 2035, most journeys take seconds to optimise. Ours take a little longer. That is the point. NS Rust Carriages are designed for people who remember that the journey is not wasted time.</p>
+
+          <div class="ns-features">
+            <div class="ns-feature"><div class="ns-feature-dot"></div><span><strong>No WiFi. No ads. No notifications.</strong> Just you and the landscape outside the window.</span></div>
+            <div class="ns-feature"><div class="ns-feature-dot"></div><span><strong>Natural materials throughout</strong> — linen headrests, oak panelling, warm lighting at all hours.</span></div>
+            <div class="ns-feature"><div class="ns-feature-dot"></div><span><strong>Matcha and herbal tea service</strong> included on all intercity Rust routes, curated by season.</span></div>
+            <div class="ns-feature"><div class="ns-feature-dot"></div><span><strong>Scenic routing by design</strong> — NS Rust takes the route with the best view, not the fastest track.</span></div>
+            <div class="ns-feature"><div class="ns-feature-dot"></div><span><strong>Coreset Certified 2034</strong> — independently verified to support passenger wellbeing.</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="ns-cta-row">
+            <span class="ns-cta">Book NS Rust</span>
+            <p class="ns-cta-note">ns.nl/rust<br>Available Amsterdam to Eindhoven, Utrecht to Arnhem</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ns-ad-visual">
+        <div class="ad-scene">
+          <div class="sky"></div>
+          <div class="sun"></div>
+          <div class="cloud c1"></div>
+          <div class="cloud c2" style="top:28px; left:55px;"></div>
+          <div class="hills"></div>
+          <div class="hills2"></div>
+          <div class="tree t1"><div class="tree-top" style="width:32px; height:44px; background:#2d5a27; border-radius:50% 50% 40% 40%; margin-bottom:-4px;"></div><div class="tree-trunk" style="height:20px;"></div></div>
+          <div class="tree t2"><div class="tree-top" style="width:24px; height:34px; background:#3a6e32; border-radius:50% 50% 40% 40%; margin-bottom:-2px;"></div><div class="tree-trunk" style="height:14px;"></div></div>
+          <div class="tree t3"><div class="tree-top" style="width:38px; height:52px; background:#254e22; border-radius:50% 50% 40% 40%; margin-bottom:-5px;"></div><div class="tree-trunk" style="height:26px;"></div></div>
+        </div>
+
+        <div class="ad-visual-tags">
+          <span class="vtag">🔇 No WiFi</span>
+          <span class="vtag">🍃 Coreset Certified</span>
+        </div>
+
+        <div class="train-window-wrap" style="top:38%; transform:translate(-50%,-50%);">
+          <div class="window-frame">
+            <div class="window-inner"></div>
+            <div class="person-in-window">
+              <div class="pw-head"></div>
+              <div class="pw-body"></div>
+            </div>
+          </div>
+          <div class="seat-bar"></div>
+        </div>
+
+        <div class="ad-tagline">
+          <p>"Rust is a destination too."</p>
+          <span>NS RUST · 2035</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== PAGE 6: VISUAL STORYTELLING EXPLANATION ===== -->
+<div class="page vs-page">
+  <div class="page-header">
+    <div>
+      <div class="section-eyebrow" style="color:#ff3c9e; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:4px; text-transform:uppercase; margin-bottom:6px;">Assignment 6 · Visual Storytelling</div>
+      <h2 class="page-title" style="color:white;">Why this <span class="sub">advertisement.</span></h2>
+    </div>
+    <div class="page-header-right">
+      Alice Di Prospero & Valerie Kemunto<br>
+      CSA-C01 · Trend: CORESET
+    </div>
+  </div>
+
+  <div class="vs-grid">
+    <div class="vs-left">
+      <div class="vs-text-block">
+        <div class="vs-block-label">Why an advertisement</div>
+        <p>We chose a future NS advertisement as our visual storytelling device because it puts the CORESET trend directly into action. An ad does not just describe a future: it performs it. It shows what it feels like to live in best case scenario 2, where brands compete on calm rather than convenience. We wanted something that Maya herself would stop and look at. Something that would make her feel seen without trying to sell her anything she did not already want.</p>
+      </div>
+      <div class="vs-text-block">
+        <div class="vs-block-label">Why NS</div>
+        <p>NS was a natural fit because the train is already the most CORESET form of transport available. It is slow by design. It forces you to sit still. It shows you the landscape. It has no steering wheel to distract you. <strong>The train is already Coreset. NS just has not said so yet.</strong> Our ad is the version of NS that finally does.</p>
+      </div>
+      <div class="vs-text-block">
+        <div class="vs-block-label">Why "NS Rust" and green</div>
+        <p>We kept the familiar NS identity but added a new layer. <strong>Rust</strong> means rest or quiet in Dutch, which captures the trend perfectly without being clinical or wellness-y. The shift from NS blue to sage green communicates the transition from speed to nature, from utility to experience. It is not a rebrand that erases the past. It is an extension that opens a new chapter.</p>
+      </div>
+    </div>
+
+    <div class="vs-right">
+      <div class="vs-reflection">
+        <div class="vs-block-label">What the ad communicates</div>
+        <p>The headline "Stop arriving. Start travelling." directly challenges the dominant logic of modern transport, which is about minimising journey time. It flips the value proposition completely: the journey itself is the product. This connects to our evidence wall signals about digital detox tourism, the Scandinavian sleep method, silent walking, and the growing desire for experiences that ask nothing of you.</p>
+        <div class="value-list">
+          <div class="value-row"><div class="value-dot"></div><span><strong>No WiFi, no ads</strong> responds to the Screen Free Sunday signal from our field research</span></div>
+          <div class="value-row"><div class="value-dot"></div><span><strong>Matcha service</strong> responds to our weak signal about people choosing matcha for its calming properties</span></div>
+          <div class="value-row"><div class="value-dot"></div><span><strong>Scenic routing</strong> responds to the weak signal about nature walks physically lowering stress hormones</span></div>
+          <div class="value-row"><div class="value-dot"></div><span><strong>Coreset Certified</strong> is a fictional label we invented that mirrors real-world sustainability labels, showing how this trend could become institutionalised</span></div>
+        </div>
+      </div>
+      <div class="vs-text-block">
+        <div class="vs-block-label">Our reflection</div>
+        <p>The CORESET trend is not about rejecting the modern world. It is about finding a sustainable way to live inside it. NS, as a brand, is already halfway there: it just needs to commit. <strong>If NS does not lead this transition, another brand will.</strong> Our ad is a provocation as much as it is a proposal. It asks: what if the most comforting thing NS ever offered was not a timetable, but permission to stop watching one?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gap"></div>
+
+</body>
+</html>
